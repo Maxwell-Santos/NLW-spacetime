@@ -74,3 +74,12 @@ app.get('/users', async () => {
 O cors serve para determinar quais url de frontend podem acessar a API
 
 <code>npm i @fastfy/cors</code>
+
+## Usar variável ambiente
+Para usar variáveis ambiente no backend, precisa usar uma biblioteca <code>npm i dotenv -D</code>
+
+## Axios
+O axios serve para fazer requisições http dentro do código, uma alternativa ao próprio fetch do js <code>npm i axios</code>
+
+## Usando JWT
+Nesse caso como ja está usando o fastify, ele mesmo tem a sua biblioteca de jwt <code>npm i @fastify/jwt</code>
