@@ -69,3 +69,8 @@ app.get('/users', async () => {
   return users
 })
 ```
+
+## Usando o cors
+O cors serve para determinar quais url de frontend podem acessar a API
+
+<code>npm i @fastfy/cors</code>

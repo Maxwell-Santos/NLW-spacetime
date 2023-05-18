@@ -13,6 +13,21 @@ datasource db {
 //@id explica para o prisma que essa é minha chave primária, para depois encontrar usuários por ela
 //@default(uuid()) vai gerar um id único universal para cada usuário
 model User {
-  id   String @id @default(uuid())
-  name String
+  id        String   @id @default(uuid())
+  githubId  Int      @unique
+  name      String
+  login     String
+  avatarUrl String
+  Memory    Memory[]
+}
+
+model Memory {
+  id        String   @id @default(uuid())
+  userId    String //chave estrangerira
+  coverUrl  String
+  content   String
+  isPublic  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id]) //relacionamento de um usuário pode ter várias memórias
 }

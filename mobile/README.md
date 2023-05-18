@@ -39,3 +39,60 @@ Criar arquivo prettier.config.js com o conteúdo:
 <code>npm i prettier-plugin-tailwindcss -D</code>
 
 E por fim recarregar a window
+
+### criando regras no eslint
+
+para criar uma regra no eslint 
+nesse caso ele vai ignorar a regra de sempre declarar variáveis em camelcase, nesse caso tem variáveis que vem com o nome assim: 
+Roboto_Bold700 
+Esse underline, antes da regra, era um erro de lint
+```json
+//.eslintrc.json
+
+  "rules": {
+    "camelcase": "off"
+  }
+```
+### ImageBackground
+é um componente do react, tipo uma view mesmo, mas ela aceita uma image de fundo
+
+### Usando SVG no React-native
+para usar svg, precisa instalar uma biblioteca que permite com que importe arquivos .svg
+
+Instalar bibliotecas:
+1. npx expo install react-native-svg
+2. npm i -D install react-native-svg-transformer
+3. Criar um arquivo na raiz <code>metro.config.js</code> e colocar o código 
+
+```js
+const { getDefaultConfig } = require("expo/metro-config");
+
+module.exports = (() => {
+  const config = getDefaultConfig(__dirname);
+
+  const { transformer, resolver } = config;
+
+  config.transformer = {
+    ...transformer,
+    babelTransformerPath: require.resolve("react-native-svg-transformer"),
+  };
+  config.resolver = {
+    ...resolver,
+    assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
+    sourceExts: [...resolver.sourceExts, "svg"],
+  };
+
+  return config;
+})();
+```
+
+4. e no arquivo assets.d.ts, para entender que o .svg é um arquivo que pode ser importado
+
+```ts
+declare module "*.svg" {
+  import React from 'react';
+  import { SvgProps } from "react-native-svg";
+  const content: React.FC<SvgProps>;
+  export default content;
+}
+```
