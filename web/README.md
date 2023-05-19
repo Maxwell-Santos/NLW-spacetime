@@ -35,3 +35,23 @@ backgroundSize: {
   stripes: '100% 8px',
 }
 ```
+
+## Autenticação com o github
+para isso o github precisa saber que alguma aplicação vai usar ele:
+
+1. procurar configurações de desenvolvedor do github
+2. ir em OAuth Apps
+3. Copiar o código do cliente numa variável ambiente no frontend
+4. E gerar um novo segredo do cliente e colocar numa variável ambiente no servidor
+
+* Detalhe o backend vai precisar tanto o código do cliente quanto o segredo, como variável ambiente
+
+## Obtendo o código do github para mais tarde ser usado como access token e conseguir os dados da conta
+O link de login do github é https://github.com/login/oauth/authorize?client_id=
+
+Esse link vai te mandar para autorizar o login no github e na url, vai retornar o access token num atributo code
+
+
+## JWT-DECODE
+é uma biblioteca que vai usar para extrair as informações do jwt de long do usuário, enviado do backend.
+
