@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -22,8 +19,9 @@ model User {
 }
 
 model Memory {
-  id        String   @id @default(uuid())
-  userId    String //chave estrangerira
+  id     String @id @default(uuid())
+  userId String //chave estrangerira
+
   coverUrl  String
   content   String
   isPublic  Boolean  @default(false)

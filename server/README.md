@@ -6,7 +6,7 @@
 <br />
 <code>npm i @types/node -D</code>
 
-o npx é uma forma de execultar binários instalados pela biblioteca de desenvolvimento
+o npx é uma forma de executar binários instalados pela biblioteca de desenvolvimento
 
 - vai iniciar o tsconfig as configurações do typescrit no projeto
 <code>npx tsc --init </code>
@@ -16,7 +16,7 @@ o npx é uma forma de execultar binários instalados pela biblioteca de desenvol
 - serve para executar a transpilação automático do ts para js
 <code>npm i tsx -D</code>
 
-- vai executar nesse arquvio o ts, ja que o node não entende
+- vai executar nesse arquivo o ts, ja que o node não entende
 <code>npx tsx src/server.ts</code>
 
 E depois disso é só adicionar esse comando no package.json
@@ -27,13 +27,13 @@ E depois disso é só adicionar esse comando no package.json
   }
 ```
 
-Logo, sempre que execultar npm run dev, ele vai fazer esse comando do tsx
+Logo, sempre que executar npm run dev, ele vai fazer esse comando do tsx
 
 - O próximo framework é o <code>npm i fastify</code>
 
-ES LINT <code>npm i eslint -D</code> para padronizar o código, nesse caso ja estou usando uma configuração da própria rocketseat, mas caso quisesse criar uma prórpia é só executar <code>npx eslint --init</code>
+ES LINT <code>npm i eslint -D</code> para padronizar o código, nesse caso ja estou usando uma configuração da própria rocketseat, mas caso quisesse criar uma própria é só executar <code>npx eslint --init</code>
 
-- Para configurar todos os arquvios com o eslint, de uma vez, é só criar esse script no package.json <code>"lint": "eslint src --ext .ts --fix"</code>
+- Para configurar todos os arquivos com o eslint, de uma vez, é só criar esse script no package.json <code>"lint": "eslint src --ext .ts --fix"</code>
 
 
 ### Prisma
@@ -83,3 +83,10 @@ O axios serve para fazer requisições http dentro do código, uma alternativa a
 
 ## Usando JWT
 Nesse caso como ja está usando o fastify, ele mesmo tem a sua biblioteca de jwt <code>npm i @fastify/jwt</code>
+
+## Upload de arquivos
+Instalar o <code>npm i @fastify/multipart</code>
+
+Esse tipo de envio "multipart" é o mesmo tipo de envio de um formulário no html, quando você coloca uma rota, no action do forumlário, os dados são enviador com o tipo multipart, e não json
+
+*O json só aceita envio por texto

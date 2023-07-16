@@ -53,7 +53,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
   })
 
   // o boolean do zod é 1,
-  app.post('/memories/:id', async (request) => {
+  app.post('/memories', async (request) => {
     const bodySchema = z.object({
       content: z.string(),
       coverUrl: z.string(),

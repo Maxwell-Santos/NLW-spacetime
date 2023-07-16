@@ -70,7 +70,7 @@ export async function authRoutes(app: FastifyInstance) {
         avatarUrl: user.avatarUrl,
       },
       {
-        // informação unica
+        // informação única
         sub: user.id,
         expiresIn: '30 days',
       },
